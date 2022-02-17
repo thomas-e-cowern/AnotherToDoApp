@@ -14,6 +14,7 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @State private var showAddTodoView: Bool = false
+    @State private var animationButton: Bool = false
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Todo.name, ascending: true)],
@@ -55,6 +56,43 @@ struct ContentView: View {
                     EmptyListView()
                 }
             } // End of ZStack
+            .sheet(isPresented: $showAddTodoView) {
+                AddToDoView().environment(\.managedObjectContext, self.viewContext)
+            }
+            .overlay(
+                ZStack {
+                    
+                    Group {
+                        Circle()
+                            .fill(Color.blue)
+                            .opacity(self.animationButton ? 0.2 : 0)
+                            .scaleEffect(self.animationButton ? 1 : 0)
+                            .frame(width: 68, height: 68, alignment: .center)
+                        Circle()
+                            .fill(Color.blue)
+                            .opacity(self.animationButton ? 0.15 : 0)
+                            .scaleEffect(self.animationButton ? 1 : 0)
+                            .frame(width: 88, height: 88, alignment: .center)
+                    }
+                    .animation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true), value: animationButton)
+                    
+                    Button(action: {
+                        self.showAddTodoView.toggle()
+                    }, label: {
+                        Image(systemName: "plus.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .background(Circle().fill(Color("ColorBase")))
+                            .frame(width: 48, height: 48, alignment: .center)
+                    }) // MARK:  End of button
+                        .onAppear {
+                            self.animationButton.toggle()
+                        }
+                } // End of ZStack
+                    .padding(.bottom, 15)
+                    .padding(.trailing, 15)
+                , alignment: .bottomTrailing
+            )
         }
     }
     
