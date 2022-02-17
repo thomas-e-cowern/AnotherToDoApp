@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41AB1C0B27BECE3100A6F1DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AB1C0A27BECE3100A6F1DD /* LaunchScreen.storyboard */; };
 		41B1127C27BE5B8B00AB7906 /* AnotherToDoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B1127B27BE5B8B00AB7906 /* AnotherToDoAppApp.swift */; };
 		41B1127E27BE5B8B00AB7906 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B1127D27BE5B8B00AB7906 /* ContentView.swift */; };
 		41B1128027BE5B9200AB7906 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41B1127F27BE5B9200AB7906 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41AB1C0A27BECE3100A6F1DD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41B1127827BE5B8B00AB7906 /* AnotherToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnotherToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B1127B27BE5B8B00AB7906 /* AnotherToDoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherToDoAppApp.swift; sourceTree = "<group>"; };
 		41B1127D27BE5B8B00AB7906 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		41B1127A27BE5B8B00AB7906 /* AnotherToDoApp */ = {
 			isa = PBXGroup;
 			children = (
+				41AB1C0A27BECE3100A6F1DD /* LaunchScreen.storyboard */,
 				41B1127B27BE5B8B00AB7906 /* AnotherToDoAppApp.swift */,
 				41B1128E27BE5C8A00AB7906 /* View */,
 				41B1127F27BE5B9200AB7906 /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41AB1C0B27BECE3100A6F1DD /* LaunchScreen.storyboard in Resources */,
 				41B1128327BE5B9200AB7906 /* Preview Assets.xcassets in Resources */,
 				41B1128027BE5B9200AB7906 /* Assets.xcassets in Resources */,
 			);
