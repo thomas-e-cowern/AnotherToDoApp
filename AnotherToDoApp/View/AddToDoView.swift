@@ -14,7 +14,7 @@ struct AddToDoView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     
     @State private var name: String = ""
-    @State private var priortiy: String = "Normal"
+    @State private var priority: String = "Normal"
     
     let priorities = ["High", "Normal", "Low"]
     
@@ -31,7 +31,7 @@ struct AddToDoView: View {
                     TextField("Todo", text: $name)
                     
                     // MARK:  Todo priority
-                    Picker("Priority", selection: $priortiy) {
+                    Picker("Priority", selection: $priority) {
                         ForEach(priorities, id: \.self) {
                             Text($0)
                         }
@@ -45,7 +45,7 @@ struct AddToDoView: View {
                             let todo = Todo(context: self.managedObjectContext)
                             
                             todo.name = self.name
-                            todo.priority = self.priortiy
+                            todo.priority = self.priority
                             
                             do {
                                 try self.managedObjectContext.save()
