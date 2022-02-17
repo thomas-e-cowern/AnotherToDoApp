@@ -10,6 +10,8 @@ import SwiftUI
 struct AddToDoView: View {
     
     // MARK:  Properties
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var name: String = ""
     @State private var priortiy: String = "Normal"
     
@@ -44,12 +46,19 @@ struct AddToDoView: View {
                 Spacer()
             } // End of VStack
             .navigationBarTitle("New Todo", displayMode: .inline)
+            .navigationBarItems(trailing:
+                Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Image(systemName: "xmark")
+                })
+            )
         } // MARK:  End of navigation
     }
 }
 
 // MARK:  Preview
-struct AddToDo_Previews: PreviewProvider {
+struct AddToDoView_Previews: PreviewProvider {
     static var previews: some View {
         AddToDoView()
     }
