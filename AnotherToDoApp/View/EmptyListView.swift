@@ -10,7 +10,7 @@ import SwiftUI
 struct EmptyListView: View {
     
     // MARK:  Properties
-    
+    @State private var isAnimated: Bool = false
     
     
     
@@ -28,9 +28,17 @@ struct EmptyListView: View {
                     .layoutPriority(0.5)
                     .font(.system(.headline, design: .rounded))
             } // End of VStack
+            .padding(.horizontal)
+            .opacity(isAnimated ? 1 : 0)
+            .offset(y: isAnimated ? 0 : -50)
+            .animation(.easeOut(duration: 1.5), value: isAnimated)
+            .onAppear {
+                self.isAnimated.toggle()
+            }
+            
         } // End of ZStack
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-        .background(Color.gray)
+        .background(Color("ColorBase"))
         .edgesIgnoringSafeArea(.all)
     }
 }
@@ -39,5 +47,6 @@ struct EmptyListView: View {
 struct EmptyListView_Previews: PreviewProvider {
     static var previews: some View {
         EmptyListView()
+            .environment(\.colorScheme, .dark)
     }
 }

@@ -52,7 +52,7 @@ struct ContentView: View {
                     }
                 }
                 if todos.count == 0 {
-                    Text("Empty List")
+                    EmptyListView()
                 }
             } // End of ZStack
         }
