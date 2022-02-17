@@ -43,7 +43,7 @@ struct ContentView: View {
                         Label("Add Item", systemImage: "plus")
                     }
                     .sheet(isPresented: $showAddTodoView) {
-                        AddToDoView()
+                        AddToDoView().environment(\.managedObjectContext, self.viewContext)
                     }
 
                 }

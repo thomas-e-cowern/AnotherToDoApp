@@ -11,6 +11,7 @@ struct AddToDoView: View {
     
     // MARK:  Properties
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) var managedObjectContext
     
     @State private var name: String = ""
     @State private var priortiy: String = "Normal"
@@ -35,7 +36,17 @@ struct AddToDoView: View {
                     
                     // MARK:  Save button
                     Button {
-                        print("Save Button Tapped")
+                        let todo = Todo(context: self.managedObjectContext)
+                        
+                        todo.name = self.name
+                        todo.priority = self.priortiy
+                        
+                        do {
+                            try self.managedObjectContext.save()
+                        } catch {
+                            print(error)
+                        }
+                        
                     } label: {
                         Text("Save")
                     }
