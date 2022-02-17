@@ -38,7 +38,7 @@ struct ContentView: View {
                 .navigationBarTitle("Todo", displayMode: .inline)
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .navigationBarLeading) {
                     EditButton()
                 }
                 ToolbarItem {
