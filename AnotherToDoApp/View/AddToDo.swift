@@ -10,10 +10,31 @@ import SwiftUI
 struct AddToDo: View {
     
     // MARK:  Properties
+    @State private var name: String = ""
+    @State private var priortiy: String = "Normal"
+    
+    let priorities = ["High", "Normal", "Low"]
     
     // MARK:  Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                Form {
+                    // MARK:  Todo name
+                    TextField("Todo", text: $name)
+                    
+                    // MARK:  Todo priority
+                    Picker("Priority", selection: $priortiy) {
+                        ForEach(priorities, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                } // MARK:  End of form
+                
+                Spacer()
+            } // End of VStack
+            .navigationBarTitle("New Todo", displayMode: .inline)
+        } // MARK:  End of navigation
     }
 }
 
