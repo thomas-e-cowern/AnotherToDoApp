@@ -29,6 +29,16 @@ struct AddToDo: View {
                             Text($0)
                         }
                     }
+                    .pickerStyle(.segmented)
+                    
+                    // MARK:  Save button
+                    Button {
+                        print("Save Button Tapped")
+                    } label: {
+                        Text("Save")
+                    }
+
+                    
                 } // MARK:  End of form
                 
                 Spacer()
