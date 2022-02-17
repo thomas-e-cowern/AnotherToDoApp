@@ -18,6 +18,10 @@ struct AddToDoView: View {
     
     let priorities = ["High", "Normal", "Low"]
     
+    @State private var errorShowing: Bool = false
+    @State private var errorTitle: String = ""
+    @State private var errorMessage: String = ""
+    
     // MARK:  Body
     var body: some View {
         NavigationView {
@@ -36,16 +40,27 @@ struct AddToDoView: View {
                     
                     // MARK:  Save button
                     Button {
-                        let todo = Todo(context: self.managedObjectContext)
                         
-                        todo.name = self.name
-                        todo.priority = self.priortiy
-                        
-                        do {
-                            try self.managedObjectContext.save()
-                        } catch {
-                            print(error)
+                        if self.name != "" {
+                            let todo = Todo(context: self.managedObjectContext)
+                            
+                            todo.name = self.name
+                            todo.priority = self.priortiy
+                            
+                            do {
+                                try self.managedObjectContext.save()
+                                print("New todo: \(todo.name ?? "Uh Ohh..."), Priority: \(todo.priority ?? "No priority....")")
+                            } catch {
+                                print(error)
+                            }
+                        } else {
+                            self.errorShowing = true
+                            self.errorTitle = "Invalid Entry"
+                            self.errorMessage = "Please enter a valid Todo item"
+                            return
                         }
+                        
+                        self.presentationMode.wrappedValue.dismiss()
                         
                     } label: {
                         Text("Save")
@@ -64,6 +79,9 @@ struct AddToDoView: View {
                     Image(systemName: "xmark")
                 })
             )
+            .alert(isPresented: $errorShowing) {
+                Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
+            }
         } // MARK:  End of navigation
     }
 }
