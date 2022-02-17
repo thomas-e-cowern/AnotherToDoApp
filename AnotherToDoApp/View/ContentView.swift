@@ -23,34 +23,38 @@ struct ContentView: View {
     // MARK:  Body
     var body: some View {
         NavigationView {
-            List {
-                ForEach(self.todos, id: \.self) { todo in
-                    
-                    HStack {
-                        Text(todo.name ?? "No name for this todo")
+            ZStack {
+                List {
+                    ForEach(self.todos, id: \.self) { todo in
                         
-                        Spacer()
-                        
-                        Text(todo.priority ?? "No priority for this todo")
+                        HStack {
+                            Text(todo.name ?? "No name for this todo")
+                            
+                            Spacer()
+                            
+                            Text(todo.priority ?? "No priority for this todo")
+                        }
+                    }
+                    .onDelete(perform: deleteItems)
+                    .navigationBarTitle("Todo", displayMode: .inline)
+                }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        EditButton()
+                    }
+                    ToolbarItem {
+                        Button(action: showAddTodo) {
+                            Label("Add Item", systemImage: "plus")
+                        }
+                        .sheet(isPresented: $showAddTodoView) {
+                            AddToDoView().environment(\.managedObjectContext, self.viewContext)
+                        }
                     }
                 }
-                .onDelete(perform: deleteItems)
-                .navigationBarTitle("Todo", displayMode: .inline)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    EditButton()
+                if todos.count == 0 {
+                    Text("Empty List")
                 }
-                ToolbarItem {
-                    Button(action: showAddTodo) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                    .sheet(isPresented: $showAddTodoView) {
-                        AddToDoView().environment(\.managedObjectContext, self.viewContext)
-                    }
-                }
-            }
-            Text("Select an item")
+            } // End of ZStack
         }
     }
     
