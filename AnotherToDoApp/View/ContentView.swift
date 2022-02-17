@@ -9,13 +9,18 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
+    // MARK:  Properties
     @Environment(\.managedObjectContext) private var viewContext
+    
+    @State private var showAddTodoView: Bool = false
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
 
+    // MARK:  Body
     var body: some View {
         NavigationView {
             List {
@@ -27,19 +32,28 @@ struct ContentView: View {
                     }
                 }
                 .onDelete(perform: deleteItems)
+                .navigationBarTitle("Todo", displayMode: .inline)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
+                    Button(action: showAddTodo) {
                         Label("Add Item", systemImage: "plus")
                     }
+                    .sheet(isPresented: $showAddTodoView) {
+                        AddToDoView()
+                    }
+
                 }
             }
             Text("Select an item")
         }
+    }
+    
+    private func showAddTodo () {
+        self.showAddTodoView.toggle()
     }
 
     private func addItem() {
@@ -81,6 +95,7 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
+// MARK:  Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddToDo: View {
+struct AddToDoView: View {
     
     // MARK:  Properties
     @State private var name: String = ""
@@ -51,6 +51,6 @@ struct AddToDo: View {
 // MARK:  Preview
 struct AddToDo_Previews: PreviewProvider {
     static var previews: some View {
-        AddToDo()
+        AddToDoView()
     }
 }

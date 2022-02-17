@@ -13,7 +13,7 @@
 		41B1128327BE5B9200AB7906 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41B1128227BE5B9200AB7906 /* Preview Assets.xcassets */; };
 		41B1128527BE5B9200AB7906 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B1128427BE5B9200AB7906 /* Persistence.swift */; };
 		41B1128827BE5B9200AB7906 /* AnotherToDoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41B1128627BE5B9200AB7906 /* AnotherToDoApp.xcdatamodeld */; };
-		41B1129027BE5CA900AB7906 /* AddToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B1128F27BE5CA900AB7906 /* AddToDo.swift */; };
+		41B1129027BE5CA900AB7906 /* AddToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B1128F27BE5CA900AB7906 /* AddToDoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +24,7 @@
 		41B1128227BE5B9200AB7906 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		41B1128427BE5B9200AB7906 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		41B1128727BE5B9200AB7906 /* AnotherToDoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AnotherToDoApp.xcdatamodel; sourceTree = "<group>"; };
-		41B1128F27BE5CA900AB7906 /* AddToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDo.swift; sourceTree = "<group>"; };
+		41B1128F27BE5CA900AB7906 /* AddToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				41B1127D27BE5B8B00AB7906 /* ContentView.swift */,
-				41B1128F27BE5CA900AB7906 /* AddToDo.swift */,
+				41B1128F27BE5CA900AB7906 /* AddToDoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,7 +158,7 @@
 				41B1127E27BE5B8B00AB7906 /* ContentView.swift in Sources */,
 				41B1127C27BE5B8B00AB7906 /* AnotherToDoAppApp.swift in Sources */,
 				41B1128827BE5B9200AB7906 /* AnotherToDoApp.xcdatamodeld in Sources */,
-				41B1129027BE5CA900AB7906 /* AddToDo.swift in Sources */,
+				41B1129027BE5CA900AB7906 /* AddToDoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
