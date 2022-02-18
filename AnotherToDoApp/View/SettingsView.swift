@@ -17,10 +17,23 @@ struct SettingsView: View {
         NavigationView {
             VStack (alignment: .center, spacing: 0) {
                 Form {
-                    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                    // MARK:  Section 4
+                    
+                    Section(header: Text("About the application")) {
+                        
+                        FormRowStaticView(icon: "gear", firstText: "Application", secondText: "To Do")
+                        FormRowStaticView(icon: "checkmark.seal", firstText: "Compatability", secondText: "iPhone, iPad")
+                        FormRowStaticView(icon: "keyboard", firstText: "Developer", secondText: "Thomas Cowern")
+                        FormRowStaticView(icon: "Paintbrush", firstText: "Designer", secondText: "Robert Petras")
+                        FormRowStaticView(icon: "flag", firstText: "Version", secondText: "1.0.0")
+                    } // MARK:  End of section
+                    
+                    
+                    
                 } // MARK:  End of form
                 .listStyle(.grouped)
                 .environment(\.horizontalSizeClass, .regular)
+                
                 // MARK:  Footer
                 Text("Copyright 😎 All Rights Reserved. \nProfessional Apps Creative Apps")
                     .multilineTextAlignment(.center)
@@ -31,7 +44,7 @@ struct SettingsView: View {
                     
             } // End of VStack
             .navigationBarTitle("Settings", displayMode: .inline)
-            .background(Color("ColorBackground")).edgesIgnoringSafeArea(.all)
+            .background(Color("ColorBackground"))
         } // MARK:  End of navigation
     }
 }
