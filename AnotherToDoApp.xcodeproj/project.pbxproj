@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		417DB64B27BFAD7900D01AAE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DB64A27BFAD7800D01AAE /* SettingsView.swift */; };
+		417DB64D27BFB2F100D01AAE /* FormRowStaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DB64C27BFB2F100D01AAE /* FormRowStaticView.swift */; };
 		41AB1C0B27BECE3100A6F1DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AB1C0A27BECE3100A6F1DD /* LaunchScreen.storyboard */; };
 		41AB1C0D27BED38800A6F1DD /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AB1C0C27BED38700A6F1DD /* EmptyListView.swift */; };
 		41B1127C27BE5B8B00AB7906 /* AnotherToDoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B1127B27BE5B8B00AB7906 /* AnotherToDoAppApp.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		417DB64A27BFAD7800D01AAE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		417DB64C27BFB2F100D01AAE /* FormRowStaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowStaticView.swift; sourceTree = "<group>"; };
 		41AB1C0A27BECE3100A6F1DD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41AB1C0C27BED38700A6F1DD /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		41B1127827BE5B8B00AB7906 /* AnotherToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnotherToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +91,7 @@
 				41B1128F27BE5CA900AB7906 /* AddToDoView.swift */,
 				41AB1C0C27BED38700A6F1DD /* EmptyListView.swift */,
 				417DB64A27BFAD7800D01AAE /* SettingsView.swift */,
+				417DB64C27BFB2F100D01AAE /* FormRowStaticView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				417DB64B27BFAD7900D01AAE /* SettingsView.swift in Sources */,
+				417DB64D27BFB2F100D01AAE /* FormRowStaticView.swift in Sources */,
 				41B1128527BE5B9200AB7906 /* Persistence.swift in Sources */,
 				41B1127E27BE5B8B00AB7906 /* ContentView.swift in Sources */,
 				41AB1C0D27BED38800A6F1DD /* EmptyListView.swift in Sources */,

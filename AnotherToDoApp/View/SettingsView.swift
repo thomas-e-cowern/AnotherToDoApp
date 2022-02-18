@@ -14,7 +14,25 @@ struct SettingsView: View {
     
     // MARK:  Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack (alignment: .center, spacing: 0) {
+                Form {
+                    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                } // MARK:  End of form
+                .listStyle(.grouped)
+                .environment(\.horizontalSizeClass, .regular)
+                // MARK:  Footer
+                Text("Copyright 😎 All Rights Reserved. \nProfessional Apps Creative Apps")
+                    .multilineTextAlignment(.center)
+                    .font(.footnote)
+                    .padding(.top, 6)
+                    .padding(.bottom, 8)
+                    .foregroundColor(Color.secondary)
+                    
+            } // End of VStack
+            .navigationBarTitle("Settings", displayMode: .inline)
+            .background(Color("ColorBackground")).edgesIgnoringSafeArea(.all)
+        } // MARK:  End of navigation
     }
 }
 
