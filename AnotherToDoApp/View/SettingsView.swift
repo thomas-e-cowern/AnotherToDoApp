@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     
     // MARK:  Properties
-    
+    @Environment(\.presentationMode) var presentationMode
     
     // MARK:  Body
     var body: some View {
@@ -51,6 +51,13 @@ struct SettingsView: View {
                     .foregroundColor(Color.secondary)
                     
             } // End of VStack
+            .navigationBarItems(trailing:
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Image(systemName: "xmark")
+                })
+            )
             .navigationBarTitle("Settings", displayMode: .inline)
             .background(Color("ColorBackground"))
         } // MARK:  End of navigation

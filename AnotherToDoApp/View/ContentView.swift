@@ -15,6 +15,7 @@ struct ContentView: View {
     
     @State private var showAddTodoView: Bool = false
     @State private var animationButton: Bool = false
+    @State private var showSettingsView: Bool = false
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Todo.name, ascending: true)],
@@ -44,11 +45,14 @@ struct ContentView: View {
                         EditButton()
                     }
                     ToolbarItem {
-                        Button(action: showAddTodo) {
-                            Label("Add Item", systemImage: "plus")
+                        Button(action:  {
+                            self.showSettingsView.toggle()
+                            
+                        }) {
+                            Image(systemName: "paintbrush")
                         }
-                        .sheet(isPresented: $showAddTodoView) {
-                            AddToDoView().environment(\.managedObjectContext, self.viewContext)
+                        .sheet(isPresented: $showSettingsView) {
+                            SettingsView().environment(\.managedObjectContext, self.viewContext)
                         }
                     }
                 }
