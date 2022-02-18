@@ -17,6 +17,14 @@ struct SettingsView: View {
         NavigationView {
             VStack (alignment: .center, spacing: 0) {
                 Form {
+                    
+                    // MARK:  Section 3
+                    Section(header: Text("Follow us on social media")) {
+                        FormRowLinkView(icon: "globe", color: Color.pink, text: "website", link: "https://swiftuimasterclass.com")
+                        FormRowLinkView(icon: "link", color: Color.blue, text: "twitter", link: "https://twitter.com")
+                        FormRowLinkView(icon: "play.rectangle", color: Color.yellow, text: "courses", link: "https://www.udemy.com")
+                    }
+                    
                     // MARK:  Section 4
                     
                     Section(header: Text("About the application")) {
@@ -26,7 +34,7 @@ struct SettingsView: View {
                         FormRowStaticView(icon: "keyboard", firstText: "Developer", secondText: "Thomas Cowern")
                         FormRowStaticView(icon: "Paintbrush", firstText: "Designer", secondText: "Robert Petras")
                         FormRowStaticView(icon: "flag", firstText: "Version", secondText: "1.0.0")
-                    } // MARK:  End of section
+                    } // MARK:  End of section 4
                     
                     
                     
